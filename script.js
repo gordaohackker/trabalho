@@ -76,7 +76,6 @@ function carregarUsuariosAdmin() {
       <td>${u.email}</td>
       <td>${u.telefone || '-'}</td>
       <td>${u.senha}</td>
-      <td>${c.origem || '-'}</td>
 
     `;
     tbody.appendChild(tr);

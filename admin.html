@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>admin</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Painel Admin</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contato.html">Contato</a>
+      <a href="login.html">Login / Cadastro</a>
+      <a href="admin.html">Painel Admin</a>
+    </nav>
+  </header>
+  <main class="container">
+    <div id="adminLogin">
+      <h2>Login do Administrador</h2>
+      <form id="adminLoginForm">
+        <label for="adminEmail">Email:</label>
+        <input type="email" id="adminEmail" required />
+        <label for="adminSenha">Senha:</label>
+        <input type="password" id="adminSenha" required />
+        <button type="submit">Entrar</button>
+        <h2>Mensagens de Contato</h2>
+<table id="contatosTable">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Mensagem</th>
+      <th>Origem</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+      </form>
+<p id="semContatos">Nenhuma mensagem enviada ainda.</p>
+
+      <div id="adminErro" class="alert" style="display:none; margin-top: 1rem;"></div>
+    </div>
+    <div id="adminPainel" style="display: none;">
+      <h2>Usuários Cadastrados</h2>
+      <table id="usuariosTable">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Senha (Texto Puro)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="semUsuarios" style="margin-top:1rem;">Nenhum usuário cadastrado.</p>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Vagas de Trabalho
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

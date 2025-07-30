@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contato</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>contato</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contato.html">Contato</a>
+      <a href="admin.html">Painel Admin</a>
+    </nav>
+  </header>
+  <script>
+    if (sessionStorage.getItem("logado") !== "sim") {
+      window.location.href = "login.html";
+    }
+  </script>
+  <main class="container">
+    <button onclick="sessionStorage.removeItem('logado'); window.location.href='login.html';" style="float:right;">Logout</button>
+
+    <h2>fale mais sobre você</h2>
+    <form id="contatoForm">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <label for="telefone">Telefone:</label>
+      <input type="text" id="telefone" name="telefone" />
+      <label for="mensagem">qual vaga deseja:</label>
+       <input type="text" id="origem" name="origem" placeholder="" required />
+      <label for="origem">estado civil,escolaridade,disponibilidade,expecialidade</label>
+      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="resposta" style="margin-top:1rem; padding:1rem; border:1px solid #ccc; border-radius:4px; display:none;"></div>
+  </main>
+  <footer>
+    &copy; 2025 femmora contrata
+  </footer>
+  <script>
+    const form = document.getElementById('contatoForm');
+    const respostaDiv = document.getElementById('resposta');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const nome = form.nome.value.trim();
+      const email = form.email.value.trim();
+      const telefone = form.telefone.value.trim();
+      const mensagem = form.mensagem.value.trim();
+      const origem = form.origem.value.trim();
+
+      if (!nome || !email || !mensagem) {
+        respostaDiv.style.display = 'block';
+        respostaDiv.style.background = '#f44336';
+        respostaDiv.textContent = 'Por favor, preencha os campos obrigatórios.';
+        return;
+      }
+      respostaDiv.style.display = 'block';
+      respostaDiv.style.background = '#4caf50';
+      respostaDiv.textContent = `Obrigado, ${nome}! Sua mensagem foi recebida. Entraremos em contato pelo email ${email}.`;
+      form.reset();
+    });
+  </script>
+  <script>
+  const form = document.getElementById('contatoForm');
+  const resposta = document.getElementById('resposta');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nome = form.nome.value.trim();
+    const email = form.email.value.trim();
+    const telefone = form.telefone.value.trim();
+    const mensagem = form.mensagem.value.trim();
+    const origem = form.origem.value.trim();
+
+
+    if (!nome || !email || !mensagem) {
+      resposta.style.display = 'block';
+      resposta.style.background = '#f44336';
+      resposta.textContent = 'Preencha os campos obrigatórios.';
+      return;
+    }
+
+    let contatos = JSON.parse(sessionStorage.getItem('contatos') || '[]');
+    contatos.push({ nome, email, telefone, mensagem });
+    sessionStorage.setItem('contatos', JSON.stringify(contatos));
+
+    resposta.style.display = 'block';
+    resposta.style.background = '#4caf50';
+    resposta.textContent = 'Mensagem enviada com sucesso!';
+    form.reset();
+  });
+</script>
+
+</body>
+</html>

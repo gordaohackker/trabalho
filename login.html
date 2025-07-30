@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login / Cadastro</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h4 style="text-align: center;">femmora contrata</h4>
+    <h1>Login / Cadastro</h1>
+  </header>
+    <hr style="margin: 2rem 0;" />
+    <section id="loginSection">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="logEmail">Email:</label>
+        <input type="email" id="logEmail" required />
+        <label for="logSenha">Senha:</label>
+        <input type="password" id="logSenha" required />
+        <button type="submit">Entrar</button>
+      </form>
+    </section>
+  </main>
+  <main class="container">
+    <div id="alerta" class="alert" style="display:none;"></div>
+    <section id="cadastroSection">
+      <h2>Cadastro</h2>
+      <form id="cadastroForm">
+        <label for="cadNome">Nome:</label>
+        <input type="text" id="cadNome" required />
+        <label for="cadEmail">Email:</label>
+        <input type="email" id="cadEmail" required />
+        <label for="cadTelefone">Telefone:</label>
+        <input type="text" id="cadTelefone" />
+        <label for="cadSenha">Senha:</label>
+        <input type="password" id="cadSenha" required />
+        <button type="submit">Cadastrar</button>
+      </form>
+    </section><br>
+  <footer>
+    &copy; 2025 femmora contrata
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* CSS neutro para o site de vagas */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+header, footer {
+  background: #222;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+form label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+form button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  background: #222;
+  color: white;
+  border-radius: 4px;
+}
+form button:hover {
+  background: #555;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+table, th, td {
+  border: 1px solid #ddd;
+}
+th, td {
+  padding: 0.7rem;
+  text-align: left;
+}
+.alert {
+  padding: 1rem;
+  background: #f44336;
+  color: white;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vagas de Trabalho</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>femmora contrata</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contato.html">contatos</a>
+      <a href="admin.html">Painel Admin</a>
+    </nav>
+  </header>
+  <script>
+    if (sessionStorage.getItem("logado") !== "sim") {
+      window.location.href = "login.html";
+    }
+  </script>
+  <main class="container">
+    <button onclick="sessionStorage.removeItem('logado'); window.location.href='login.html';" style="float:right;">Logout</button>
+
+    <h2>Vagas Disponíveis</h2>
+    <ul>
+      <li><strong>caixa/atendimento</strong> - Empresa femmora X - são paulo-lajedo-birajuba</li>
+      <li><strong>reposiçao/limpeza</strong> - Empresa femmora x - são paulo-lajedo-birajuba</li>
+      <li><strong>gerente</strong> - Empresa femmora x - lajedo-birajuba</li>
+      <li><strong>analista de banco de dados</strong> - empresa femmora x -são paulo - lajedo-birajuba</li>
+    </ul>
+  </main>
+  <footer>
+    &copy; 2025 femmora contrata
+  </footer>
+</body>
+</html>
